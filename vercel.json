@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next",
+      "config": {
+        "nodeVersion": "18.x"
+      }
+    }
+  ],
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max_old_space_size=4096"
+    }
+  },
+  "buildCommand": "node scripts/patch-radix.js && next build"
+}

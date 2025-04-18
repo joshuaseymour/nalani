@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  --container-padding: 1rem;
+  --section-spacing: 4rem;
+  --card-spacing: 1rem;
+
+  --header-height: 4rem;
+  --footer-padding: 2rem;
+
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  --color-primary: #d946ef;
+  --color-primary-light: #f3e8ff;
+  --color-secondary: #7c3aed;
+  --color-secondary-light: #ede9fe;
+  --color-vanilla: #fde68a;
+  --color-vanilla-light: #fef3c7;
+  --color-vanilla-dark: #b45309;
+  --color-strawberry: #ec4899;
+  --color-strawberry-light: #fce7f3;
+  --color-strawberry-dark: #be185d;
+  --color-chocolate: #a16207;
+  --color-chocolate-light: #f3e8ff;
+  --color-chocolate-dark: #422006;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-padding: 2rem;
+    --section-spacing: 6rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden;
+  }
+
+  .card-padding {
+    @apply p-4 md:p-6;
+  }
+
+  .gradient-primary {
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  }
+
+  .gradient-text {
+    background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+  }
+
+  .interactive-element {
+    @apply transition-all duration-200;
+  }
+
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Flavor badges */
+  .badge-vanilla {
+    @apply bg-vanilla text-gray-900 border border-vanilla-dark;
+  }
+  .badge-strawberry {
+    @apply bg-strawberry text-white border border-strawberry-dark;
+  }
+  .badge-chocolate {
+    @apply bg-chocolate text-white border border-chocolate-dark;
+  }
+}
+
+/* Animation utilities */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+.animate-float-slow-delay {
+  animation: float 8s ease-in-out 1s infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-strawberry {
+  background-color: var(--color-strawberry);
+}
+.bg-strawberry-light {
+  background-color: var(--color-strawberry-light);
+}
+.bg-vanilla {
+  background-color: var(--color-vanilla);
+}
+.bg-vanilla-light {
+  background-color: var(--color-vanilla-light);
+}
+.bg-chocolate {
+  background-color: var(--color-chocolate);
+}
+.bg-chocolate-light {
+  background-color: var(--color-chocolate-light);
+}
+
+.text-strawberry {
+  color: var(--color-strawberry);
+}
+.text-vanilla {
+  color: var(--color-vanilla);
+}
+.text-chocolate {
+  color: var(--color-chocolate);
+}
+
+.border-strawberry {
+  border-color: var(--color-strawberry);
+}
+.border-vanilla {
+  border-color: var(--color-vanilla);
+}
+.border-chocolate {
+  border-color: var(--color-chocolate);
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to content link */
+.skip-link {
+  @apply bg-white text-gray-900 absolute left-4 top-4 z-50 p-2 -translate-y-16 focus:translate-y-0 transition-transform;
+}
