@@ -1,0 +1,7 @@
+Copyright (c) 2025 Nalani. All rights reserved.
+
+This software and its contents are the exclusive property of Nalani and may not be copied, modified, distributed, or used in any manner without the express written permission of Nalani. No open-source license (including MIT) is granted or implied.
+
+Unauthorized use, reproduction, or distribution of this software, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law.
+
+For inquiries regarding licensing or usage, please contact: legal@nalani.com
